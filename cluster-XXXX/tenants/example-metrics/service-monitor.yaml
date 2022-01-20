@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: example-metrics-service-monitor
+  namespace: example-metrics
+spec:
+  endpoints:
+  - interval: 30s
+    port: 8080-tcp
+    scheme: http
+  selector:
+    matchLabels:
+      app: example-metrics
