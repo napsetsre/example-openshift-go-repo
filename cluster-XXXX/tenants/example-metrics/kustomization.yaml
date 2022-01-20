@@ -6,3 +6,4 @@ resources:
 - example-metrics-deployment.yaml
 - example-metrics-service.yaml
 - example-metrics-route.yaml
+- example-metrics-service-monitor.yaml
