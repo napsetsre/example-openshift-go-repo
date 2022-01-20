@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: example-metrics
+  namespace: example-metrics
+spec:
+  ports:
+    - name: 8080-tcp
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: ClusterIP
+  selector:
+    app: example-metrics
+status:
+  loadBalancer: {}
+
+

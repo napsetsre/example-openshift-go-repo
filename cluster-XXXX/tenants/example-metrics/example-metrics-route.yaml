@@ -1,0 +1,11 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: example-metrics
+  namespace: example-metrics
+spec:
+  to:
+    kind: Service
+    name: example-metrics
+  port:
+    targetPort: 8080-tcp

@@ -1,0 +1,11 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+  name: grafana-operator
+  namespace: openshift-user-workload-monitoring
+spec:
+  channel: v4
+  installPlanApproval: Automatic
+  name: grafana-operator
+  source: community-operators
+  sourceNamespace: openshift-marketplace
+

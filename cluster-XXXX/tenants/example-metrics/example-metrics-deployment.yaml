@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: example-metrics
+  name: example-metrics
+  namespace: example-metrics
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: example-metrics
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: example-metrics
+    spec:
+      containers:
+      - image: sysdiglabs/prom-example
+        name: example-metrics
+        resources: {}
