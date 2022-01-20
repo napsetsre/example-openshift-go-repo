@@ -7,4 +7,3 @@ commonAnnotations:
 resources: 
 - community-grafana-operator-sub.yaml
 - grafana-instance.yaml
-- grafana-datasource.yaml
