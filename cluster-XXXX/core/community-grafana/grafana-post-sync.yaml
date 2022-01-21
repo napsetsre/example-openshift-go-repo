@@ -4,6 +4,7 @@ metadata:
   annotations:
     argocd.argoproj.io/hook: PostSync
   name: grafana-post-sync-job
+  namespace: openshift-user-workload-monitoring
 spec:
   template:
     spec:
