@@ -1,0 +1,28 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+  name: grafana-post-sync-rbac
+rules:
+  - verbs:
+      - '*'
+    apiGroups:
+      - integreatly.org
+    resources:
+      - grafanadatasources
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: cli-job-sa-rolebinding
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cli-job-sa-role
+subjects:
+  - kind: ServiceAccount
+    name: grafana-post-sync-sa
+    namespace: openshift-user-workload-monitoring
