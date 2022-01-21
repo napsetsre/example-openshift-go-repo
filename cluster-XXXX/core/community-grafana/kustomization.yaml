@@ -6,6 +6,5 @@ resources:
 - grafana-operator-group.yaml
 - grafana-instance.yaml
 - grafana-dashboard-instance.yaml
-- grafana-post-sync-rbac.
 - grafana-post-sync-rbac.yaml
 - grafana-post-sync-sa.yaml
