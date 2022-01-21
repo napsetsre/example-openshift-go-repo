@@ -9,8 +9,10 @@ rules:
       - '*'
     apiGroups:
       - integreatly.org
+      - rbac.authorization.k8s.io
     resources:
       - grafanadatasources
+      - clusterrolebindings
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
