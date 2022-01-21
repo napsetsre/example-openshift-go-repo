@@ -5,3 +5,4 @@ resources:
 - grafana-sub.yaml
 - grafana-operator-group.yaml
 - grafana-instance.yaml
+- grafana-dashboard-instance.yaml
