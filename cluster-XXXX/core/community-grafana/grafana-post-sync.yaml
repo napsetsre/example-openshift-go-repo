@@ -3,6 +3,7 @@ kind: Job
 metadata:
   annotations:
     argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/sync-wave: "2"
   name: grafana-post-sync-job
   namespace: openshift-user-workload-monitoring
 spec:

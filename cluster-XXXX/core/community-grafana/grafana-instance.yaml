@@ -4,7 +4,8 @@ metadata:
   name: example-metrics-dashboard
   namespace: openshift-user-workload-monitoring
   annotations:
-    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   config: {}
   ingress:
