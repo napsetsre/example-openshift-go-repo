@@ -16,11 +16,11 @@ spec:
             - |
               BEARER_TOKEN=$(oc serviceaccounts get-token grafana-serviceaccount -n openshift-user-workload-monitoring 2>&1)
               THANOS_URL=$(oc get route thanos-querier -n openshift-monitoring --template={{.spec.host}} 2>&1)
-      
+       
               oc adm policy add-cluster-role-to-user cluster-monitoring-view -z grafana-serviceaccount
               GRAFANA_DATASOURCE='{"apiVersion":"integreatly.org/v1alpha1","kind":"GrafanaDataSource","metadata":{"name":"example-metrics-datasource","namespace":"openshift-user-workload-monitoring"},"spec":{"datasources":[{"access":"proxy","editable":true,"isDefault":true,"jsonData":{"httpHeaderName1":"Authorization","timeInterval":"5s","tlsSkipVerify":true},"name":"Prometheus","secureJsonData":{"httpHeaderValue1":"Bearer '"$BEARER_TOKEN"'"},"type":"prometheus","url":"https://'"$THANOS_URL"'"}],"name":"example-metrics-datasource.yaml"}}'
               echo $GRAFANA_DATASOURCE | oc apply -f -       
-      name: grafana-datasource-apply-script
+          name: grafana-datasource-apply-script
       dnsPolicy: ClusterFirst
       restartPolicy: OnFailure
       serviceAccountName: grafana-post-sync-sa
