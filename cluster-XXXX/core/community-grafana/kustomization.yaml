@@ -7,3 +7,4 @@ resources:
 - grafana-instance.yaml
 - grafana-post-sync-rbac.yaml
 - grafana-post-sync-sa.yaml
+- grafana-post-sync.yaml
