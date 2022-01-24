@@ -4,7 +4,7 @@ metadata:
   name: example-metrics
   namespace: example-metrics
   labels:
-    app: example-metrics
+    app: example-metrics-remove
 spec:
   ports:
     - name: 8080-tcp
