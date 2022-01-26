@@ -79,7 +79,7 @@ data:
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "Request Rate",
+          "title": "HTTP Request Rate",
           "tooltip": {
             "shared": true,
             "sort": 0,
