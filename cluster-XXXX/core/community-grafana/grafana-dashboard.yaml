@@ -11,4 +11,3 @@ spec:
   configMapRef:
     key: grafana-dashboard.json
     name: dashboard-config-map
-
