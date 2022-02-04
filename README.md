@@ -18,42 +18,6 @@ that I use [Kustomize](https://kustomize.io/) heavily. I do this since I
 follow the [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 principal when it comes to YAML files.
 
-```shell
-cluster-XXXX/ # 1
-├── bootstrap # 2
-│   ├── base
-│   │   ├── kustomization.yaml
-│   │   └── openshift-gitops-sub.yaml
-│   └── overlays
-│       └── default
-│           ├── kustomization.yaml
-│           ├── openshift-gitops-argocd.yaml
-│           └── openshift-gitops-rbac-policy.yaml
-├── components # 3
-│   ├── applicationsets
-│   │   ├── core-components-appset.yaml
-│   │   ├── kustomization.yaml
-│   │   └── tenants-appset.yaml
-│   └── argocdproj
-│       ├── kustomization.yaml
-│       └── test-project.yaml
-├── core # 4
-│   ├── container-security-operator
-│   │   ├── container-security-operator-sub.yaml
-│   │   └── kustomization.yaml
-│   └── gitops-controller
-│       └── kustomization.yaml
-└── tenants # 5
-    ├── bgd-blue
-    │   ├── bgd-deployment.yaml
-    │   └── kustomization.yaml
-    └── myapp
-        ├── kustomization.yaml
-        ├── myapp-deployment.yaml
-        ├── myapp-ns.yaml
-        ├── myapp-route.yaml
-        └── myapp-service.yaml
-```
 |#|Directory Name|Description|
 |---|----------------|-----------------|
 | 1. |`cluster-XXXX`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| This is the cluster name. This name should be unique to the specific cluster you're targeting. For OpenShift, I like to use the output of `kubectl get infrastructure cluster -o jsonpath='{.status.infrastructureName}'`|
