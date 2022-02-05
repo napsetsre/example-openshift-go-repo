@@ -7,7 +7,7 @@ spec:
   generators:
   - git:
       repoURL: https://github.com/napsetsre/example-openshift-go-repo.git
-      revision: main
+      revision: workshop
       directories:
       - path: cluster-XXXX/tenants/*
   template:
@@ -27,7 +27,7 @@ spec:
             maxDuration: 5m
       source:
         repoURL: https://github.com/napsetsre/example-openshift-go-repo.git
-        targetRevision: main
+        targetRevision: workshop
         path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
