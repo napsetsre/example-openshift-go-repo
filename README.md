@@ -1,21 +1,10 @@
-# OpenShift GitOps Repo
+# OpenShift GitOps Repository
 
-This is an example on how I would structure a 1:1 (repo-to-single cluster)
-git repo for OpenShift. This can be modified for other, [non OLM enabled](https://github.com/christianh814/example-kubernetes-go-repo),
-Kubernetes clusters by just changing a few files.
-
-This example assumes (as I mentioned in the 1:1 part above) that it's a
-single repo for a single cluster. However, this can be modified (quite
-easily) for poly/mono repos or for multiple clusters. This is meant as
-a good starting point and not what your final repo will look like.
-
-This is based on Argo CD but the same principals can be applied to Flux.
+This example demonstrates how to structure a GitOps repository for OpenShift leveraging ArgoCD.
 
 # Structure
 
-Below is an explanation on how this repo is laid out. You'll notice
-that I use [Kustomize](https://kustomize.io/) heavily. I do this since I
-follow the [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+Notice that [Kustomize](https://kustomize.io/) is used heavily to take advantage the [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 principal when it comes to YAML files.
 
 |#|Directory Name|Description|
@@ -28,13 +17,13 @@ principal when it comes to YAML files.
 
 # Testing
 
-To see this in action, just apply this repo.
+Apply the following command deploy ArgoCD which will intern deploy both core and tenant applications.
 
 ```shell
 until kubectl apply -k https://github.com/napsetsre/example-openshift-go-repo/cluster-XXXX/bootstrap/overlays/default; do sleep 3; done
 ```
 
-This should give you 4 applications
+View the should GitOps applications
 
 ```shell
 $ kubectl get applications -n openshift-gitops
