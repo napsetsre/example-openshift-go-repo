@@ -1,0 +1,42 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: bookinfo-istio-system
+  labels:
+    name: bookinfo-istio-system
+---
+apiVersion: maistra.io/v2
+kind: ServiceMeshControlPlane
+metadata:
+  name: basic
+  namespace: bookinfo-istio-system
+spec:
+  version: v2.0
+  tracing:
+    type: Jaeger
+    sampling: 10000
+  addons:
+    jaeger:
+      name: jaeger
+      install:
+        storage:
+          type: Memory
+    kiali:
+      enabled: true
+      name: kiali
+    grafana:
+      enabled: true
+  security:
+    trust:
+    manageNetworkPolicy: true
+---
+apiVersion: maistra.io/v1
+kind: ServiceMeshMemberRoll
+metadata:
+  name: default
+  namespace: bookinfo-istio-system
+spec:
+  members:
+    - bookinfo
+---
