@@ -11,9 +11,6 @@ metadata:
 apiVersion: maistra.io/v2
 kind: ServiceMeshControlPlane
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: PostSync
-    argocd.argoproj.io/sync-wave: "1"
   name: basic
   namespace: bookinfo-istio-system
 spec:
@@ -39,9 +36,6 @@ spec:
 apiVersion: maistra.io/v1
 kind: ServiceMeshMemberRoll
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: PostSync
-    argocd.argoproj.io/sync-wave: "1"
   name: default
   namespace: bookinfo-istio-system
 spec:
