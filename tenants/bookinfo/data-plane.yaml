@@ -2,9 +2,6 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: PreSync
-    argocd.argoproj.io/sync-wave: "0"
   name: bookinfo
   labels:
     name: bookinfo
@@ -12,9 +9,6 @@ metadata:
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "2"
   name: productpage
   namespace: bookinfo
 spec:
@@ -27,9 +21,6 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "2"
   name: reviews
   namespace: bookinfo
 spec:
@@ -48,9 +39,6 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "2"
   name: ratings
   namespace: bookinfo
 spec:
@@ -72,9 +60,6 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "2"
   name: details
   namespace: bookinfo
 spec:
@@ -93,9 +78,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "2"
   name: details
   namespace: bookinfo
   labels:
@@ -111,9 +93,6 @@ spec:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "2"
   name: bookinfo-details
   namespace: bookinfo
   labels:
@@ -122,9 +101,6 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "2"
   name: details-v1
   namespace: bookinfo
   labels:
@@ -158,9 +134,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "2"
   name: ratings
   namespace: bookinfo
   labels:
@@ -176,9 +149,6 @@ spec:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "2"
   name: bookinfo-ratings
   namespace: bookinfo
   labels:
@@ -187,9 +157,6 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "2"
   name: ratings-v1
   namespace: bookinfo
   labels:
@@ -223,9 +190,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "2"
   name: reviews
   namespace: bookinfo
   labels:
@@ -241,9 +205,6 @@ spec:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "2"
   name: bookinfo-reviews
   namespace: bookinfo
   labels:
@@ -252,9 +213,6 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "2"
   name: reviews-v1
   namespace: bookinfo
   labels:
@@ -298,9 +256,6 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "2"
   name: reviews-v2
   namespace: bookinfo
   labels:
@@ -344,9 +299,6 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "2"
   name: reviews-v3
   namespace: bookinfo
   labels:
@@ -393,9 +345,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "2"
   name: productpage
   namespace: bookinfo
   labels:
@@ -411,9 +360,6 @@ spec:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "2"
   name: bookinfo-productpage
   namespace: bookinfo
   labels:
@@ -422,9 +368,6 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "2"
   name: productpage-v1
   namespace: bookinfo
   labels:
@@ -461,9 +404,6 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "2"
   name: bookinfo-gateway
   namespace: bookinfo
 spec:
@@ -480,9 +420,6 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "2"
   name: bookinfo
   namespace: bookinfo
 spec:
