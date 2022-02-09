@@ -4,3 +4,5 @@ kind: Kustomization
 resources: 
 - kiali-ossm-sub.yaml
 - service-mesh-sub.yaml
+- maistraoperator.yaml
+- jaeger-product-sub.yaml
