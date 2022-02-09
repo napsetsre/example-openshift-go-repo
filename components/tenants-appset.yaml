@@ -1,15 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: cluster
+  name: tenants
   namespace: openshift-gitops
 spec:
   generators:
   - git:
-      repoURL: https://github.com/napsetsre/example-openshift-go-repo
+      repoURL: https://github.com/napsetsre/example-openshift-go-repo.git
       revision: workshop
       directories:
-      - path: core/*
+      - path: tenants/
   template:
     metadata:
       name: '{{path.basename}}'
@@ -26,7 +26,7 @@ spec:
             factor: 2
             maxDuration: 5m
       source:
-        repoURL: https://github.com/napsetsre/example-openshift-go-repo
+        repoURL: https://github.com/napsetsre/example-openshift-go-repo.git
         targetRevision: workshop
         path: '{{path}}'
       destination:
