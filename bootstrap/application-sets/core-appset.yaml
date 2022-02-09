@@ -9,7 +9,7 @@ spec:
       repoURL: https://github.com/napsetsre/example-openshift-go-repo
       revision: workshop
       directories:
-      - path: core/
+      - path: core
   template:
     metadata:
       name: '{{path.basename}}'
