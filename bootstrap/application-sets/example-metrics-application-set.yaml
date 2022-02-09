@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: tenants
+  name: example-metrics
   namespace: openshift-gitops
 spec:
   generators:
@@ -9,7 +9,7 @@ spec:
       repoURL: https://github.com/napsetsre/example-openshift-go-repo.git
       revision: workshop
       directories:
-      - path: tenants/*
+      - path: tenants/example-metrics/*
   template:
     metadata:
       name: '{{path.basename}}'
@@ -31,3 +31,4 @@ spec:
         path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
+---
