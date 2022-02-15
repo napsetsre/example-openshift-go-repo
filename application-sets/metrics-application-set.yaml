@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: example-metrics
+  namespace: openshift-gitops
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/napsetsre/example-openshift-go-repo.git
+      revision: workshop
+      directories:
+      - path: tenants/metrics/*
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      project: default
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        retry:
+          limit: 15
+          backoff:
+            duration: 15s
+            factor: 2
+            maxDuration: 5m
+      source:
+        repoURL: https://github.com/napsetsre/example-openshift-go-repo.git
+        targetRevision: workshop
+        path: '{{path}}'
+      destination:
+        server: https://kubernetes.default.svc
+---

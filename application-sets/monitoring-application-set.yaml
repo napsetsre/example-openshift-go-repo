@@ -9,7 +9,7 @@ spec:
       repoURL: https://github.com/napsetsre/example-openshift-go-repo.git
       revision: workshop
       directories:
-      - path: tenants/example-metrics/*
+      - path: tenants/monitoring/*
   template:
     metadata:
       name: '{{path.basename}}'
