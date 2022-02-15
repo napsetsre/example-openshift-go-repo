@@ -3,5 +3,3 @@ kind: Kustomization
 
 resources:
 - core-application-set.yaml
-- bookinfo-application-set.yaml
-- example-metrics-application-set.yaml

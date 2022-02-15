@@ -4,9 +4,3 @@ kind: Kustomization
 resources: 
 - grafana-sub.yaml
 - grafana-operator-group.yaml
-- grafana-instance.yaml
-- grafana-dashboard-config-map.yaml
-- grafana-dashboard.yaml
-- grafana-post-sync-rbac.yaml
-- grafana-post-sync-sa.yaml
-- grafana-post-sync.yaml
