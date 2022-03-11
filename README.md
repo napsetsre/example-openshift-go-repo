@@ -31,7 +31,7 @@ principal when it comes to YAML files.
 To see this in action, just apply this repo.
 
 ```shell
-until kubectl apply -k https://github.com/napsetsre/example-openshift-go-repo/cluster-XXXX/bootstrap/overlays/default; do sleep 3; done
+until kubectl apply -k https://github.com/napsetsre/user-defined-metrics/cluster-XXXX/bootstrap/overlays/default; do sleep 3; done
 ```
 
 This should give you 4 applications
